@@ -8,7 +8,10 @@ import Cart from './pages/Cart';
 function App() {
   return(
     <div>
-      <Navbar/>
+      <div className='w-full bg-[#071952]'>
+        <Navbar/>
+      </div>
+     
 
       <Routes>
         <Route path='/' element={<Home/>} />
