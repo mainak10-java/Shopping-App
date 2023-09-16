@@ -6,10 +6,11 @@ import { NavLink } from "react-router-dom";
 const Cart = () =>{
     const {cart} = useSelector((state) => state);
     const [totalAmount, setTotalAmount] = useState(0);
+    const count = useSelector((state) => state.counter.value)
 
     useEffect(() => {
-        setTotalAmount(cart.reduce((acc,curr) => acc + curr.price, 0));
-    }, [cart])
+        setTotalAmount(cart.reduce((acc,curr) => acc + curr.price*count, 0));
+    }, [cart, count])
     return(
         <div>
             <div>
